@@ -1,0 +1,53 @@
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ant-layout {
+    height: 100%;
+}
+.header{
+
+    .logoImg{
+        height:32px;
+        top: 3px;
+        left: -20px;
+        position: relative;
+        vertical-align: text-bottom;
+    }
+}
+
+/*
+ * 常用class
+ */
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.show {
+    display: '';
+}
+
+.hide {
+    display: none;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.fix-top-middle {
+    position: fixed;
+    top: 13px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 300px;
+}

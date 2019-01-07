@@ -1,0 +1,1 @@
+[https://www.infoq.cn/article/es6-in-depth-generators](https://www.infoq.cn/article/es6-in-depth-generators)

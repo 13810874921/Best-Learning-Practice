@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    console.log('-------------------------------')
+    document.ready=function(){
+        console.log('ready')
+    }
+    document.addEventListener('click', function(e){
+        console.log(this);
+        setTimeout(function(){
+            console.log(this);
+        }, 200);
+    }, false);
+    var a = 138;
+    var obj = {
+        a:666,
+        fn:function(){
+            console.log(this.a)
+            return this.a
+        }
+    }
+    var fn1 = obj.fn;
+    // obj.fn()
+    fn1() // 此时指向window.a    1
+    fn1.call(obj)  // 指向obj    6
+    fn1.apply(obj) // 指向obj    6
+    fn1.bind(obj)() // 指向obj   6
+
+
+
+    var obj2 = {
+        message: 'My name is: '
+    }
+
+    function getName(firstName, lastName) {
+        console.log(this.message + firstName + ' ' + lastName)
+    }
+
+    // getName.apply(obj2, ['Dot', 'Dolby'])
+    console.log(getName.apply(obj2, ['Dot', 'Dolby'])===getName.call(obj2,'Dot','Dolby'))//true
+    console.log(getName.apply(obj2, ['Dot', 'Dolby'])===getName.bind(obj2)('Dot','Dolby'))//true
+    console.log(getName.call(obj2,'Dot','Dolby')===getName.bind(obj2)('Dot','Dolby'))//true
+
+console.log('-------------------------------')
+    </script>
+</body>
+</html>
